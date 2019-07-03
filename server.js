@@ -1,9 +1,10 @@
 var express = require("express");
+var path = require("path");
 var app = express();
 var port = 3000;
 
 app.get("/", function(req, res) {
-    res.send("it works");
+    res.sendFile(path.join(__dirname, "app/public/home.html"));
 })
 
 app.listen(3000 || PROCESS.ENV.PORT, function() {
