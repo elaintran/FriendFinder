@@ -24,6 +24,20 @@ p {
     background-position: right;
     background-size: cover;
     width: 45%;
+    position: relative;
+}
+
+.links {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+}
+
+.links a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 /* Homepage Sign Up Form */
@@ -84,6 +98,7 @@ input:focus {
 #name, #photo, #email {
     border: 0;
     height: 35px;
+    width: 85%;
     margin-bottom: 1px;
     font-family: inherit;
     font-size: 14px;
@@ -108,13 +123,16 @@ input:focus {
     border-bottom: 1px solid #79adb1;
 }
 
-/*Hide original checkbox and replace with a new one*/
+/*
+* Hide original checkbox and replace with a new one
+* Input checkbox cannot be styled
+*/
 #checkbox {
     margin-right: 10px;
     visibility: hidden;
 }
 
-/*New Checkmark Box*/
+/* New Checkmark Box */
 .checkmark {
     margin-top: 2px;
     position: absolute;
@@ -123,7 +141,7 @@ input:focus {
     height: 13px;
     width: 13px;
     background-color: #ffffff;
-    border: 1px solid #c8c8c8;
+    border: 1px solid #959595;
     border-radius: 2px;
 }
 
