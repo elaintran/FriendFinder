@@ -1,8 +1,105 @@
-html, body {
+body {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 15px;
+    color: black;
+}
+
+.right-panel {
+    background: url("images/friend-panel.jpg");
+    background-size: cover;
+    background-position: right;
+    width: 45%;
+}
+
+.title {
+    color: #8db16d;
+}
+
+.subtitle {
+    /* text-align: center; */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-panel {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up {
+    padding: 40px;
+    width: 450px;
+    margin: auto;
+}
+
+form {
+    margin: 10px 0;
+}
+
+label {
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.fa-user, .fa-envelope, .fa-camera {
+    margin: 0 20px 0 6px;
+    font-size: 11px;
+    color: #303135;
+} 
+
+.input-container {
+    border-bottom: 1px solid #959595;
+    width: 100%;
+}
+
+#name, #email, #photo, #gender {
+    border: 0;
+    height: 35px;
+    margin-bottom: 1px;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 14px;
+}
+
+#submit {
+    background-color: #8db16d;
+	border: 0px solid transparent;
+	color: white;
+	padding: 15px 15px;
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 40px auto 15px;
+    border-radius: 2px;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+/* #gender {
+    border: 0;
+} */
+
+/* html, body {
 	margin: 0;
 	padding: 0;
 	background-color: #f7f7f7;
-	font-family: "Open Sans", sans-serif;
+	font-family: "Work Sans", sans-serif;
 }
 
 h4 {
@@ -122,4 +219,4 @@ footer {
 	.footer-links p {
     	margin: 0 11px;
 	}
-}
+} */
