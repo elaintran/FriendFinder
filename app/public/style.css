@@ -1,6 +1,9 @@
 body {
     font-family: "Work Sans", sans-serif;
     font-weight: 500;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 h2 {
@@ -16,6 +19,8 @@ p {
 .container {
     display: flex;
     height: 100vh;
+    flex: 1;
+    position: relative;
 }
 
 /* Homepage Left Panel Image */
@@ -24,13 +29,12 @@ p {
     background-position: right;
     background-size: cover;
     width: 45%;
-    position: relative;
 }
 
 .links {
     position: absolute;
-    bottom: 15px;
-    left: 30px;
+    bottom: 3%;
+    left: 2%;
 }
 
 .links a {
@@ -50,7 +54,7 @@ p {
 
 .sign-up {
     margin: auto;
-    padding: 40px;
+    padding: 0 60px;
     width: 450px;
 }
 
@@ -199,6 +203,82 @@ input:focus {
 #submit:hover {
     cursor: pointer;
     opacity: 0.9;
+}
+
+@media screen and (max-height: 569px) {
+    .container {
+        height: auto;
+    }
+    .sign-up {
+        padding: 80px 60px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 896px) {
+    .title {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+    label {
+        margin-top: 25px;
+    }
+    #submit {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 853px) {
+    .left-panel {
+        display: none;
+    }
+    .right-panel {
+        width: 100%;
+    }
+    .title {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    .links {
+        width: 100%;
+        bottom: 20px;
+        left: 0;
+        text-align: center;
+    }
+    .links a {
+        color: #5a5a5a;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    .sign-up {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width: 544px) {
+    .container {
+        height: auto;
+    }
+    .sign-up {
+        padding: 80px 5%;
+    }
+    #submit {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 369px) {
+    #name, #photo, #email {
+        width: 80%;
+    }
 }
 
 /* html, body {
