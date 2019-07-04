@@ -5,7 +5,7 @@ body {
 
 h2 {
     font-size: 35px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 p {
@@ -21,11 +21,12 @@ p {
 }
 
 .title {
-    color: #8db16d;
+    text-align: center;
+    color: #79adb1;
 }
 
 .subtitle {
-    /* text-align: center; */
+    text-align: center;
 }
 
 .container {
@@ -78,7 +79,7 @@ label {
 }
 
 #submit {
-    background-color: #8db16d;
+    background-color: #79adb1;
 	border: 0px solid transparent;
 	color: white;
 	padding: 15px 15px;
@@ -89,6 +90,11 @@ label {
     border-radius: 2px;
     font-family: inherit;
     font-weight: inherit;
+}
+
+#submit:hover {
+    cursor: pointer;
+    opacity: 0.9;
 }
 
 /* #gender {
