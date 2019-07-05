@@ -23,7 +23,7 @@ function insertQuestions() {
 		var surveyAnswer = $("<div>").addClass("answers");
 		surveyAnswer.append(stronglyDisagree).append(disagree).append(neutral).append(agree).append(stronglyAgree);
 		questionContainer.append("<p>Question " + (i + 1) + "</p>").append(surveyQuestion).append(surveyAnswer);
-		$(".survey").append(questionContainer);
+		$(".question-group").append(questionContainer);
 	}
 	var submit = $("<input>").attr({
 		"type": "submit",
