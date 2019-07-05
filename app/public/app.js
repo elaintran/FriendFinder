@@ -28,6 +28,7 @@ function insertQuestions() {
 	var submit = $("<input>").attr({
 		"type": "submit",
 		"id": "submit",
+		"class": "results",
 		"value": "See Results"
 	})
 	$(".survey").append(submit);
