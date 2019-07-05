@@ -25,11 +25,17 @@ function insertQuestions() {
 		questionContainer.append(surveyQuestion).append(surveyAnswer);
 		$(".survey").append(questionContainer);
 	}
+	var submit = $("<input>").attr({
+		"type": "submit",
+		"id": "submit",
+		"value": "See Results"
+	})
+	$(".survey").append(submit);
 }
 insertQuestions();
 
 function answer(i, id, answer) {
 	var answerButton = '<input type="radio" id="' + id + "-" + i + '" name="answer-' + i + '">' + 
-	'<label for="' + id + "-" + i +'">' + answer + '</label>';
+	'<label for="' + id + "-" + i +'">' + answer + '</label><br>';
 	return answerButton;
 }
