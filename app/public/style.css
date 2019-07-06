@@ -63,7 +63,7 @@ p {
 .image-crop {
     width: 150px;
     height: 150px;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     border-radius: 50%;
     margin: auto;
@@ -72,9 +72,11 @@ p {
 }
 
 .profile img {
-    display: inline;
+    /* display: inline; */
     margin: 0 auto;
     height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .profile h4 {

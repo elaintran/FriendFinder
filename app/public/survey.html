@@ -61,6 +61,27 @@
             })
         }
         userDisplay();
+
+        $(".survey").on("submit", function(event) {
+            event.preventDefault();
+            var friends = {
+                name: $(".user-name").text(),
+                photo: $(".user-photo").attr("src"),
+                scores: [
+                    $("input[name='q1']:checked").attr("value"),
+                    $("input[name='q2']:checked").attr("value"),
+                    $("input[name='q3']:checked").attr("value"),
+                    $("input[name='q4']:checked").attr("value"),
+                    $("input[name='q5']:checked").attr("value"),
+                    $("input[name='q6']:checked").attr("value"),
+                    $("input[name='q7']:checked").attr("value"),
+                    $("input[name='q8']:checked").attr("value"),
+                    $("input[name='q9']:checked").attr("value"),
+                    $("input[name='q10']:checked").attr("value")
+                ]
+            }
+            console.log(friends);
+        })
     </script>
     
     <!--Javascript-->
