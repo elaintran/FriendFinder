@@ -25,7 +25,7 @@
         <div class="left-panel fixed-panel">
             <div class="profile">
                 <div class="image-crop">
-                    <img src="images/girl-a.jpg">
+                    <img src="images/girl-a.jpg" class="user-photo">
                 </div>
                 <h4 class="user-name">Amanda Smith</h4>
                 <div class="location">
@@ -53,8 +53,11 @@
     <script>
         function userDisplay() {
             $.get("/api/user", function(data) {
-                $(".user-name").text(data[0].name);
-                $(".user-location").text(data[0].location);
+                //get the most recent user
+                var index = data.length - 1;
+                $(".user-name").text(data[index].name);
+                $(".user-location").text(data[index].location);
+                $(".user-photo").attr("src", data[index].photo);
             })
         }
         userDisplay();
