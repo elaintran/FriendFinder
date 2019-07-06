@@ -27,10 +27,10 @@
                 <div class="image-crop">
                     <img src="images/girl-a.jpg">
                 </div>
-                <h4>Amanda Smith</h4>
+                <h4 class="user-name">Amanda Smith</h4>
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>Austin, TX</p>
+                    <p class="user-location">Austin, TX</p>
                 </div>
                 <div class="survey-links">
                         <a href="https://elaintran.github.io/friendfinder.html" target="_blank"><i class="fas fa-home"></i>About</a>
@@ -49,6 +49,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function userDisplay() {
+            $.get("/api/user", function(data) {
+                $(".user-name").text(data[0].name);
+                $(".user-location").text(data[0].location);
+            })
+        }
+        userDisplay();
+    </script>
     
     <!--Javascript-->
     <script type="text/javascript" src="app.js"></script>

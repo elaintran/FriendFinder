@@ -52,7 +52,6 @@ p {
     position: fixed;
     width: 240px;
     height: 100vh;
-    box-shadow: 3px 10px 30px rgba(175,175,175,0.1);
     background-color: #79adb1;
     text-align: center;
 }
@@ -150,11 +149,16 @@ p {
 }
 
 /* Form Input Icons */
-.fa-user, .fa-envelope, .fa-camera {
+.sign-up .fa-user, .sign-up .fa-camera {
     margin: 0 20px 0 6px;
     font-size: 11px;
     color: #303135;
 } 
+
+.sign-up .fa-map-marker-alt {
+    margin: 0 24px 0 8px;
+    font-size: 11px;
+}
 
 .input-container {
     border-bottom: 1px solid #959595;
@@ -169,7 +173,7 @@ input:focus {
 * Text Input
 * Use inherit to change the font stylings
 */
-#name, #photo, #email {
+#name, #photo, #location {
     margin-bottom: 1px;
     border: 0;
     width: 85%;
