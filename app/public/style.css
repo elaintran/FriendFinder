@@ -49,19 +49,12 @@ p {
 }
 
 .fixed-panel {
-    margin: 20px 10px 20px 40px;
     position: fixed;
-    width: 225px;
-    height: calc(100vh - 40px);
+    width: 240px;
+    height: 100vh;
     box-shadow: 3px 10px 30px rgba(175,175,175,0.1);
-    border-radius: 10px;
     background-color: #79adb1;
-    background-color: white;
-    /* display: flex;
-    align-items: center; */
     text-align: center;
-    border: 1px solid #f7f5f5;
-    /* justify-content: center; */
 }
 
 .profile {
@@ -76,6 +69,7 @@ p {
     border-radius: 50%;
     margin: auto;
     margin-bottom: 15px;
+    border: 10px solid rgba(255, 255, 255, 0.2);
 }
 
 .profile img {
@@ -86,8 +80,9 @@ p {
 }
 
 .profile h4 {
-    /* color: white; */
-    margin-bottom: 5px;
+    color: white;
+    font-size: 21px;
+    margin-bottom: 9px;
 }
 
 .location {
@@ -95,13 +90,13 @@ p {
     align-items: center;
     justify-content: center;
     /* color: #636c72; */
-    /* color: white; */
+    color: white;
 }
 
 .location p {
     /* color: #636c72; */
-    /* color: white; */
-    font-size: 14px;
+    color: white;
+    /* font-size: 14px; */
 }
 
 /* .profile p {
@@ -123,8 +118,8 @@ p {
 }
 
 .slide-right {
-    margin-left: 250px;
-    width: calc(100% - 250px);
+    margin-left: 240px;
+    width: calc(100% - 240px);
 }
 
 .sign-up {
@@ -294,17 +289,40 @@ input:focus {
     left: 2%;
 }
 
-.links a {
+.links a, .survey-links a {
     margin: 0 10px;
     font-size: 14px;
     text-decoration: none;
     color: white;
 }
 
+.survey-links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 30px;
+}
+
+.survey-links a {
+    padding: 10px;
+}
+
+.survey-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.survey-links .fa-home, .survey-links .fa-github {
+    margin-right: 15px;
+}
+
+.survey-links .fa-user-friends {
+    margin-right: 13px;
+}
+
 .survey-container {
     margin-top: 10px;
     padding: 40px 10% 0px;
-    /* text-align: center; */
 }
 
 .survey-container h2 {
@@ -312,11 +330,7 @@ input:focus {
 }
 
 .question {
-	/* background-color: white; */
-	/* color: #504b4b; */
 	padding: 60px 20px;
-	/* margin: 25px 0; */
-	/* text-align: center; */
 }
 
 @media screen and (max-height: 569px) {
@@ -396,14 +410,11 @@ input:focus {
 }
 
 .question {
-    /* text-align: center; */
     border-top: 1px solid #e4e4e4;
 }
 
 .question:first-child {
-    /* padding-top: 30px; */
     border: 0px;
-    /* border-radius: 20px 20px 0 0; */
 }
 
 .question-group {
@@ -420,17 +431,12 @@ input:focus {
 
 .answers {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 }
 
-/* .answers label {
-    display: none;
-} */
-
-/* .survey-container h3 {
-    color: #79adb1;
-} */
+.survey-container {
+    margin: 20px 0;
+}
 
 .survey {
     margin: 40px auto 50px;
