@@ -43,7 +43,7 @@
             <div class="survey-container">
                 <h2>Friend Compatibility Survey</h2>
                 <h5>Please take your time to complete this quick survey so we can get you matched immediately!</h5>
-                <form class="survey">
+                <form class="survey" method="POST">
                     <div class="question-group"></div>
                 </div>
             </div>
@@ -51,23 +51,20 @@
     </div>
 
     <script>
-        function userDisplay() {
-            $.get("/api/friends", function(data) {
-                //get the most recent user
-                var index = data.length - 1;
-                $(".user-name").text(data[index].name);
-                $(".user-location").text(data[index].location);
-                $(".user-photo").attr("src", data[index].photo);
-            })
-        }
-        userDisplay();
+        $.get("/api/friends", function(data) {
+            //get the most recent user
+            var index = data.length - 1;
+            $(".user-name").text(data[index].name);
+            $(".user-location").text(data[index].location);
+            $(".user-photo").attr("src", data[index].photo);
+        })
 
         $(".survey").on("submit", function(event) {
             event.preventDefault();
-            var friends = {
-                name: $(".user-name").text(),
-                photo: $(".user-photo").attr("src"),
-                scores: [
+            //express post only takes in objects
+            //need to determine how to parse as an array
+            var userScore = {
+                score: [
                     $("input[name='q1']:checked").attr("value"),
                     $("input[name='q2']:checked").attr("value"),
                     $("input[name='q3']:checked").attr("value"),
@@ -79,8 +76,9 @@
                     $("input[name='q9']:checked").attr("value"),
                     $("input[name='q10']:checked").attr("value")
                 ]
-            }
-            console.log(friends);
+            };
+
+            $.post("/api/friends", userScore);
         })
     </script>
     
