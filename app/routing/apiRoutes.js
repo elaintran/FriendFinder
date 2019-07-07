@@ -41,7 +41,7 @@ function scoreResults() {
         //reset difference for every friend
         scoreDiff = 0;
     }
-    //find the lowest difference and display user as result
+    //find the lowest difference and find the index for the friend
     var friendIndex = diffArr.indexOf(Math.min.apply(null, diffArr));
     console.log(friendIndex);
 }
