@@ -1,22 +1,19 @@
 var express = require("express");
 var app = express();
 var friendList = require("../data/friends.js");
-
-var userForm = [];
+console.log(friendList);
+// var userForm = [];
 
 module.exports = function(app) {
-    //still testing api routing
-    app.get("/api/user", function(req, res) {
-        return res.json(userForm);
-    })
-
     //get information from the new user form and push into existing array
-    app.post("/api/user", function(req, res) {
+    app.post("/api/friends", function(req, res) {
         var newUser = req.body;
-        userForm.push(newUser);
-        res.json(newUser);
+        friendList.push(newUser);
+        console.log(newUser);
+        res.json(friendList);
     })
 
+    //display friend list array
     app.get("/api/friends", function(req, res) {
         return res.json(friendList);
     })

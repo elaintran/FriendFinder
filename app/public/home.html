@@ -60,13 +60,13 @@
     </div>
 
     <script>
-        $("form").on("submit", function(event) {
+        $("form").on("submit", function() {
             var newUser = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
                 location: $("#location").val().trim()
             }
-            $.post("/api/user", newUser);
+            $.post("/api/friends", newUser);
         })
     </script>
 </body>

@@ -52,7 +52,7 @@
 
     <script>
         function userDisplay() {
-            $.get("/api/user", function(data) {
+            $.get("/api/friends", function(data) {
                 //get the most recent user
                 var index = data.length - 1;
                 $(".user-name").text(data[index].name);
