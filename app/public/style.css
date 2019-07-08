@@ -33,6 +33,7 @@ p {
 .container {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     flex: 1;
     height: 100vh;
 }
@@ -368,7 +369,7 @@ input:focus {
 }
 
 @media screen and (max-width: 853px) {
-    .left-panel {
+    .image-panel {
         display: none;
     }
     .right-panel {
@@ -386,6 +387,18 @@ input:focus {
     }
     .links a {
         color: #5a5a5a;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    /*need to moved this to the top*/
+    .fixed-panel {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    .slide-right {
+        margin: auto;
     }
 }
 
@@ -420,7 +433,7 @@ input:focus {
 
 .question:first-child {
     border: 0px;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 /* .question h4 {
@@ -454,7 +467,7 @@ input:focus {
     font-size: 17px;
     border-radius: 30px;    
     margin-top: 10px;
-    padding-left: 37px;
+    padding-left: 40px;
 }
 
 /* New Checkmark Box */

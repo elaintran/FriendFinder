@@ -20,4 +20,9 @@ module.exports = function(app) {
             console.log("Please complete the form on the homepage to access survey page.");
         }
     })
+
+    //redirect to home page if user types in a url that is not survey
+    app.get("*", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    })
 }

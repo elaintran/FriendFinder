@@ -41,7 +41,7 @@
         </div>
         <div class="right-panel slide-right">
             <div class="survey-container">
-                <h2>Friend Compatibility Survey</h2>
+                <h2>Compatibility Survey</h2>
                 <!-- <h5>Please take your time to complete this quick survey so we can get you matched immediately!</h5> -->
                 <form class="survey" method="POST">
                 </form>
@@ -62,6 +62,11 @@
             $(".user-location").text(url.get("location"));
         }
         userDisplay();
+
+        //if there is an error on image link, display placeholder image
+        $(".user-photo").on("error", function() {
+            $(".user-photo").attr("src", "images/placeholder.png");
+        })
 
         $(".survey").on("submit", function(event) {
             event.preventDefault();
