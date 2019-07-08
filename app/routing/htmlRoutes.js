@@ -6,13 +6,16 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/home.html"));
     })
 
-    //default survey page if user does not submit information through new user form
+    //survey page with information from form
     app.get("/survey", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/survey.html"));
-    })
-
-    //survey page displaying user information entered from the home screen
-    app.post("/survey", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/survey.html"));
+        //use object keys to convert to array and get length of object
+        queryLength = Object.keys(req.query).length;
+        //allow users to access page only if they enter form info
+        if (queryLength !== 0) {
+            res.sendFile(path.join(__dirname, "../public/survey.html"));
+        //redirect back to root until user completes form
+        } else {
+            res.redirect("/");
+        }
     })
 }

@@ -51,19 +51,26 @@
     </div>
 
     <script>
-        $.get("/api/friends", function(data) {
-            //get the most recent user
-            var index = data.length - 1;
-            $(".user-name").text(data[index].name);
-            $(".user-location").text(data[index].location);
-            $(".user-photo").attr("src", data[index].photo);
-        })
+        // console.log(req.query);
+        // $.get(req.)
+        // $.get("/api/friends", function(data) {
+        //     //override dummy information only if 
+        //     if (data.length > 3) {
+        //         //get the most recent user
+        //         var index = data.length - 1;
+        //         $(".user-name").text(data[index].name);
+        //         $(".user-location").text(data[index].location);
+        //         $(".user-photo").attr("src", data[index].photo);
+        //     }
+        // })
 
         $(".survey").on("submit", function(event) {
             event.preventDefault();
             //express post only takes in objects
             //need to determine how to parse as an array
-            var userScore = {
+            var userInfo = {
+                name: $(".user-name").text(),
+                photo: $(".user-photo").attr("src"),
                 score: [
                     $("input[name='q1']:checked").attr("value"),
                     $("input[name='q2']:checked").attr("value"),
@@ -78,7 +85,7 @@
                 ]
             };
 
-            $.post("/api/friends", userScore);
+            // $.post("/api/friends", userInfo);
         })
     </script>
     

@@ -4,16 +4,25 @@ module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
         //get information from the new user form and push into friend object array
         //will use this information to display on survey page
-        if (req.body.name) {
+        if (req.body.location) {
             var newUser = req.body;
             friendList.push(newUser);
         //get survey information and pushes score into current user array
         } else {
-            var userScore = req.body;
+            var userInfo = req.body;
+            var currentIndex = friendList.length - 1;
             //add the property of score into current user
             //call the score property on userScore to get array instead of passing an object
             //convert string array into integer using map
-            friendList[friendList.length - 1].scores = userScore.score.map(Number);
+            userInfo.score = userInfo.score.map(Number);
+            if (friendList[currentIndex].name !== "Jenna Perez") {
+                friendList[currentIndex] = userInfo;
+            //security measure just in case user skips entering information on the root page
+            //change routing to placeholder image
+            } else {
+                userInfo.photo = "../" + userInfo.photo;
+                friendList.push(userInfo);
+            }
             scoreResults();
         }
     })
@@ -30,11 +39,11 @@ function scoreResults() {
     //loop through friends object array and excluding current user
     for (var i = 0; i < friendList.length - 1; i++) {
         //loop through score in each friend
-        for (var j = 0; j < friendList[i].scores.length - 1; j++) {
+        for (var j = 0; j < friendList[i].score.length - 1; j++) {
             //get the index for the current user
             var currentIndex = friendList.length - 1;
             //get a positive number from the difference of scores and add it to the total
-            scoreDiff += (Math.abs(friendList[i].scores[j] - friendList[currentIndex].scores[j]));
+            scoreDiff += (Math.abs(friendList[i].score[j] - friendList[currentIndex].score[j]));
         }
         //push the total score difference for each friend into array
         diffArr.push(scoreDiff);
