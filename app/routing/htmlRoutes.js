@@ -11,11 +11,13 @@ module.exports = function(app) {
         //use object keys to convert to array and get length of object
         queryLength = Object.keys(req.query).length;
         //allow users to access page only if they enter form info
+        //need to change to allow access only if name, photo, and location parameters are passed
         if (queryLength !== 0) {
             res.sendFile(path.join(__dirname, "../public/survey.html"));
         //redirect back to root until user completes form
         } else {
             res.redirect("/");
+            console.log("Please complete the form on the homepage to access survey page.");
         }
     })
 }

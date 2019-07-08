@@ -51,18 +51,18 @@
     </div>
 
     <script>
-        // console.log(req.query);
-        // $.get(req.)
-        // $.get("/api/friends", function(data) {
-        //     //override dummy information only if 
-        //     if (data.length > 3) {
-        //         //get the most recent user
-        //         var index = data.length - 1;
-        //         $(".user-name").text(data[index].name);
-        //         $(".user-location").text(data[index].location);
-        //         $(".user-photo").attr("src", data[index].photo);
-        //     }
-        // })
+        //display form info on page
+        function userDisplay() {
+            //get the query in the url, starting after the question mark
+            var query = window.location.search.substring(1);
+            //search query parameters
+            var url = new URLSearchParams(query);
+            $(".user-name").text(url.get("name"));
+            //need to change to dummy image if error
+            $(".user-photo").attr("src", url.get("photo"));
+            $(".user-location").text(url.get("location"));
+        }
+        userDisplay();
 
         $(".survey").on("submit", function(event) {
             event.preventDefault();
