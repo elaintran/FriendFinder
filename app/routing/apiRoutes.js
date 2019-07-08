@@ -10,7 +10,7 @@ module.exports = function(app) {
         userInfo.score = userInfo.score.map(Number);
         friendList.push(userInfo);
         console.log(friendList);
-        scoreResults();
+        scoreResults(res);
     })
 
     //display friend list array
@@ -19,7 +19,7 @@ module.exports = function(app) {
     })
 }
 
-function scoreResults() {
+function scoreResults(res) {
     var diffArr = [];
     var scoreDiff = 0;
     //loop through friends object array and excluding current user
@@ -38,7 +38,7 @@ function scoreResults() {
     }
     //find the lowest difference and find the index for the friend
     var friendIndex = diffArr.indexOf(Math.min.apply(null, diffArr));
-    console.log(friendIndex);
+    res.send(friendList[friendIndex]);
 }
 
 //notes
@@ -47,3 +47,4 @@ function scoreResults() {
 //maybe redo radio buttons
 //check if user image url is valid or invalid
 //find a placeholder image for survey
+//make survey input required

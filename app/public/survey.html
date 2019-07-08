@@ -42,10 +42,9 @@
         <div class="right-panel slide-right">
             <div class="survey-container">
                 <h2>Friend Compatibility Survey</h2>
-                <h5>Please take your time to complete this quick survey so we can get you matched immediately!</h5>
+                <!-- <h5>Please take your time to complete this quick survey so we can get you matched immediately!</h5> -->
                 <form class="survey" method="POST">
-                    <div class="question-group"></div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -85,7 +84,12 @@
                 ]
             };
 
-            $.post("/api/friends", userInfo);
+            $.post("/api/friends", userInfo, function(data) {
+                // $(".survey-container").empty();
+                // $(".survey-container").text("Results");
+                // $(".survey-container").append("<p>" + data.name + "</p><img src='" + data.photo + "'>");
+                console.log(data);
+            });
         })
     </script>
     

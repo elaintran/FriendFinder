@@ -23,7 +23,7 @@ function insertQuestions() {
 		var surveyAnswer = $("<div>").addClass("answers");
 		surveyAnswer.append(stronglyDisagree).append(disagree).append(neutral).append(agree).append(stronglyAgree);
 		questionContainer.append("<p>Question " + (i + 1) + "</p>").append(surveyQuestion).append(surveyAnswer);
-		$(".question-group").append(questionContainer);
+		$(".survey").append(questionContainer);
 	}
 	var submit = $("<input>").attr({
 		"type": "submit",
@@ -36,7 +36,7 @@ function insertQuestions() {
 insertQuestions();
 
 function answer(i, value, id, answer) {
-	var answerButton = '<input type="radio" id="' + id + "-" + i + '" name="q' + (i + 1) + '" value="' + value + '">' + 
-	'<label for="' + id + "-" + i +'">' + answer + '</label><br>';
+	var answerButton = '<label class="radio-container"><input type="radio" id="' + id + "-" + i + ' radio-button" name="q' + (i + 1) + '" value="' + value + '"><span class="radio"></span>' + 
+	'<h5>' + answer + '</h5></label><br>';
 	return answerButton;
 }

@@ -335,7 +335,7 @@ input:focus {
 }
 
 .question {
-	padding: 60px 20px;
+    padding: 60px 0px;
 }
 
 @media screen and (max-height: 569px) {
@@ -420,24 +420,17 @@ input:focus {
 
 .question:first-child {
     border: 0px;
+    padding-top: 20px;
 }
 
-.question-group {
-    background-color: white;
-    box-shadow: 3px -10px 30px rgba(175,175,175,0.1);
-    border-radius: 10px;
-    border: 1px solid #f7f5f5;
-    padding: 0 40px;
-}
-
-.question h4 {
+/* .question h4 {
     margin-bottom: 20px;
-}
+} */
 
-.answers {
+/* .answers {
     display: flex;
     align-items: center;
-}
+} */
 
 .survey-container {
     margin: 20px 0;
@@ -451,31 +444,34 @@ input:focus {
     margin-top: 50px;
 }
 
-.survey-container input[type="radio"] {
-    display: none; 
+.radio-container {
+    position: relative;
 }
+
 
 .survey-container label {
-    display:inline-block;
-    padding: 10px 16px;
+    display: inline-block;
     font-size: 17px;
-    border: 2px solid #79adb1;
     border-radius: 30px;    
-    color: #79adb1;
-    margin-top: 5px;
-    margin-right: 10px;
-    /* margin: 5px 5px 0px; */
+    margin-top: 10px;
+    padding-left: 37px;
 }
 
-.survey-container input[type="radio"]:checked + label { 
-    background-color: #79adb1;
-    border-color: #79adb1;
+/* New Checkmark Box */
+.radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -1px;
+    /* border: 1px solid #dfdfdf; */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     color: white;
+    background-color: #dfdfdf;
 }
 
 .survey-container label:hover {
-  	background-color: #79adb1;
-  	color: white;
   	cursor: pointer;
 }
 
@@ -483,4 +479,41 @@ input:focus {
     margin-bottom: 15px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.answers input {
+    display: none; 
+}
+
+/*
+* Tilde indicates siblings of a parent element
+* So if the parent is checked, the sibling's CSS is altered
+*/
+.answers input:checked ~ .radio {
+    border-color: #79adb1;
+    background-color: #79adb1;
+}
+
+/*
+* Create section for checkmark
+* Hidden until checked
+*/
+.radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+/* Display the checkmark when checked */
+.answers input:checked ~ .radio:after {
+    display: block;
+}
+
+.answers .radio:after {
+    top: 6px;
+    left: 6px;
+    border-radius: 50%;
+    background-color: white;
+    width: 8px;
+    height: 8px;
 }
