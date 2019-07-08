@@ -2,29 +2,15 @@ var friendList = require("../data/friends.js");
 
 module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
-        //get information from the new user form and push into friend object array
-        //will use this information to display on survey page
-        if (req.body.location) {
-            var newUser = req.body;
-            friendList.push(newUser);
-        //get survey information and pushes score into current user array
-        } else {
-            var userInfo = req.body;
-            var currentIndex = friendList.length - 1;
-            //add the property of score into current user
-            //call the score property on userScore to get array instead of passing an object
-            //convert string array into integer using map
-            userInfo.score = userInfo.score.map(Number);
-            if (friendList[currentIndex].name !== "Jenna Perez") {
-                friendList[currentIndex] = userInfo;
-            //security measure just in case user skips entering information on the root page
-            //change routing to placeholder image
-            } else {
-                userInfo.photo = "../" + userInfo.photo;
-                friendList.push(userInfo);
-            }
-            scoreResults();
-        }
+        //get survey information and pushes into friend array
+        var userInfo = req.body;
+        //add the property of score into current user
+        //call the score property on userScore to get array instead of passing an object
+        //convert string array into integer using map
+        userInfo.score = userInfo.score.map(Number);
+        friendList.push(userInfo);
+        console.log(friendList);
+        scoreResults();
     })
 
     //display friend list array
@@ -57,7 +43,6 @@ function scoreResults() {
 
 //notes
 //make survey page mobile responsive; maybe change layout again
-//check difference between the scores of user and friends
 //display modal on page
 //maybe redo radio buttons
 //check if user image url is valid or invalid
