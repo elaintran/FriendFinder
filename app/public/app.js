@@ -37,8 +37,6 @@ insertQuestions();
 
 function answer(i, value, id, answer, required) {
 	var answerButton = '<input type="radio" id="' + id + "-" + i + '" name="q' + (i + 1) + '" value="' + value + '"' + required + '>' + 
-	'<label for="' + id + "-" + i +'">' + answer + '</label><br>';
-	// var answerButton = '<label class="radio-container"><input type="radio" id="' + id + "-" + i + ' radio-button" name="q' + (i + 1) + '" value="' + value + '"><span class="radio"></span>' + 
-	// '<h5>' + answer + '</h5></label><br>';
+	'<label for="' + id + "-" + i +'">' + answer + '</label>';
 	return answerButton;
 }

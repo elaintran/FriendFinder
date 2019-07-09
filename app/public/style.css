@@ -66,7 +66,6 @@ p {
 .image-crop {
     width: 125px;
     height: 125px;
-    /* position: relative; */
     overflow: hidden;
     border-radius: 50%;
     margin: auto;
@@ -81,7 +80,6 @@ p {
 }
 
 .user-photo, .friend-photo {
-    /* display: inline; */
     margin: 0 auto;
     height: 100%;
     width: 100%;
@@ -98,25 +96,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* color: #636c72; */
     color: white;
 }
 
 .location p {
-    /* color: #636c72; */
     color: white;
-    /* font-size: 14px; */
 }
-
-/* .profile p {
-    font-size: 14px;
-} */
 
 .profile .fa-map-marker-alt {
     font-size: 10px;
     margin-right: 8px;
 }
-
 
 /* Homepage Sign Up Form */
 .right-panel {
@@ -319,6 +309,9 @@ input:focus {
     flex-direction: column;
     text-align: left;
     padding-top: 30px;
+    top: 230px;
+    left: 30px;
+    position: fixed;
 }
 
 .survey-links a {
@@ -339,20 +332,20 @@ input:focus {
 }
 
 .survey-container {
-    margin-top: 10px;
     padding: 40px 10% 0px;
+    margin: 20px 0;
 }
 
 .survey-container h2 {
     color: #79adb1;
 }
 
-.question {
-    padding: 50px 20px;
+.survey {
+    margin: 40px auto 50px;
 }
 
-
 .question {
+    padding: 50px 20px;
     background-color: white;
     margin-bottom: 10px;
     border-radius: 20px;
@@ -360,102 +353,6 @@ input:focus {
     border: 1px solid #f3f3f3;
     box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.02);
 }
-
-/* .question h4 {
-    margin-bottom: 20px;
-} */
-
-/* .answers {
-    display: flex;
-    align-items: center;
-} */
-
-.survey-container {
-    margin: 20px 0;
-}
-
-.survey {
-    margin: 40px auto 50px;
-}
-
-.survey .results {
-    margin-top: 50px;
-}
-
-.radio-container {
-    position: relative;
-}
-
-
-/* .survey-container label {
-    display: inline-block;
-    font-size: 17px;
-    border-radius: 30px;    
-    margin-top: 10px;
-    padding-left: 40px;
-} */
-
-/* New Radio Button */
-/* .radio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: -1px; */
-    /* border: 1px solid #dfdfdf; */
-    /* border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    color: white;
-    background-color: #dfdfdf;
-}
-
-.survey-container label:hover {
-  	cursor: pointer;
-}
-
-.question p {
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.answers input {
-    display: none; 
-} */
-
-/*
-* Tilde indicates siblings of a parent element
-* So if the parent is checked, the sibling's CSS is altered
-*/
-/* .answers input:checked ~ .radio {
-    border-color: #79adb1;
-    background-color: #79adb1;
-} */
-
-/*
-* Create section for checkmark
-* Hidden until checked
-*/
-/* .radio:after {
-    content: "";
-    position: absolute;
-    display: none;
-} */
-  
-/* Display the checkmark when checked */
-/* .answers input:checked ~ .radio:after {
-    display: block;
-}
-
-.answers .radio:after {
-    top: 6px;
-    left: 6px;
-    border-radius: 50%;
-    background-color: white;
-    width: 8px;
-    height: 8px;
-}
-*/
 
 .answers {
     margin-top: 20px;
@@ -476,7 +373,10 @@ input:focus {
     border-radius: 30px;    
     color: #79adb1;
     margin-top: 5px;
-    /* margin-bottom: 10px; */
+}
+
+.survey-container label:hover {
+    cursor: pointer;
 }
 
 .survey-container input[type="radio"]:checked + label { 
@@ -485,13 +385,50 @@ input:focus {
     color: white;
 }
 
-.survey-container label:hover {
-    cursor: pointer;
+.survey .results {
+    margin-top: 50px;
 }
 
-.result-section {
-    display: none;
-} 
+/* Modal Display for Friend Result */
+.modal {
+    padding-right: 0px;
+}
+
+.modal-content {
+    border: 0;
+    border-radius: 10px;
+}
+
+.modal-header {
+    border-bottom: 0;
+    padding-top: 30px;
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 0;
+    padding: 0!important;
+    margin: -13px 18px;
+    font-size: 15px;
+}
+
+.modal-title {
+    margin: auto;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.friend-match {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17px;
+}
+
+.modal-footer {
+    border: 0;
+}
 
 @media screen and (max-height: 569px) {
     .container {
@@ -536,6 +473,8 @@ input:focus {
         width: 100%;
         height: auto;
         position: static;
+        display: none;
+        /* background-color: transparent; */
     }
     .right-panel {
         width: 100%;
@@ -553,11 +492,28 @@ input:focus {
         left: 0;
         text-align: center;
     }
-    .links a {
+    .links a, .survey-links a {
         color: #5a5a5a;
+    }
+    .survey-links {
+        flex-direction: row;
+        top: auto;
+        left: auto;
+        bottom: 0;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+        position: absolute;
+    }
+    .survey-links i {
+        display: none;
     }
     .survey-container {
         padding: 40px 8% 0px;
+        text-align: center;
+    }
+    .survey {
+        margin-bottom: 80px;
     }
 }
 
@@ -580,52 +536,18 @@ input:focus {
     }
 }
 
-@media screen and (max-width: 491px) {
-
+@media screen and (max-width: 478px) {
+    .survey-container label {
+        margin: 0;
+        padding: 8px 16px;  
+    }
+    .answers {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 369px) {
     #name, #photo, #location {
         width: 80%;
     }
-}
-
-.modal-header {
-    border-bottom: 0;
-    padding-top: 30px;
-}
-
-.modal-body {
-    text-align: center;
-}
-
-.modal-title {
-    margin: auto;
-}
-
-.friend-match {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 17px;
-}
-
-.modal-header .close {
-    position: absolute;
-    right: 0;
-    padding: 0!important;
-    margin: -13px 18px;
-    font-size: 15px;
-}
-
-.modal-content {
-    border: 0;
-    border-radius: 10px;
-}
-
-.modal-footer {
-    border: 0;
-}
-
-.modal {
-    padding-right: 0px;
 }

@@ -41,9 +41,3 @@ function scoreResults(res) {
     // var resultArr = [friendList[friendIndex], friendList[friendList.length - 1]];
     res.send(friendList[friendIndex]);
 }
-
-//notes
-//make survey page mobile responsive; maybe change layout again
-//display modal on page
-//maybe redo radio buttons
-//make survey input required
