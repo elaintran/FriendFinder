@@ -29,7 +29,9 @@ function insertQuestions() {
 		"type": "submit",
 		"id": "submit",
 		"class": "results",
-		"value": "See Results"
+		"value": "See Results",
+		"data-toggle": "modal",
+		"data-target": "#result-modal"
 	})
 	$(".survey").append(submit);
 }

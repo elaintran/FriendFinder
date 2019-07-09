@@ -54,6 +54,32 @@
         </div>
     </div>
 
+    <div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalLabel">It's A Match!</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="friend-match">
+                        <div class="image-crop result-image">
+                            <img src="images/girl-a.jpg" class="friend-photo">
+                        </div>
+                        <div class="image-crop result-image">
+                            <img src="images/girl-a.jpg" class="user-photo">
+                        </div>
+                    </div>
+                    <h4>You have been matched with <span class="friend-name" style="font-weight: 600"></span>!</h4>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+
     <script>
         //display form info on page
         function userDisplay() {
@@ -95,10 +121,9 @@
             };
 
             $.post("/api/friends", userInfo, function(data) {
-                $(".survey-container").empty();
-                var results = ("<h2>").text("Results");
-                $(".survey-container").append(results);
                 console.log(data);
+                $(".friend-photo").attr("src", data.photo);
+                $(".friend-name").text(data.name);
             });
         })
     </script>

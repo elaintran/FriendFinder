@@ -38,6 +38,7 @@ function scoreResults(res) {
     }
     //find the lowest difference and find the index for the friend
     var friendIndex = diffArr.indexOf(Math.min.apply(null, diffArr));
+    // var resultArr = [friendList[friendIndex], friendList[friendList.length - 1]];
     res.send(friendList[friendIndex]);
 }
 

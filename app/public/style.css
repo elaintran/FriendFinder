@@ -74,7 +74,13 @@ p {
     border: 10px solid rgba(255, 255, 255, 0.2);
 }
 
-.profile img {
+.result-image {
+    width: 175px;
+    height: 175px;
+    margin: 0;
+}
+
+.user-photo, .friend-photo {
     /* display: inline; */
     margin: 0 auto;
     height: 100%;
@@ -223,7 +229,7 @@ input:focus {
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 2px;
+    margin-top: 5px;
     border: 1px solid #dfdfdf;
     border-radius: 2px;
     width: 13px;
@@ -583,4 +589,44 @@ input:focus {
     #name, #photo, #location {
         width: 80%;
     }
+}
+
+.modal-header {
+    border-bottom: 0;
+    padding-top: 30px;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-title {
+    margin: auto;
+}
+
+.friend-match {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17px;
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 0;
+    padding: 0!important;
+    margin: -13px 18px;
+    font-size: 15px;
+}
+
+.modal-content {
+    border: 0;
+    border-radius: 10px;
+}
+
+.modal-footer {
+    border: 0;
+}
+
+.modal {
+    padding-right: 0px;
 }
