@@ -28,14 +28,16 @@ h5 {
 
 p {
     font-size: 15px;
+    margin: 0;
 }
 
-.container {
+.container-fluid {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     height: 100vh;
+    padding: 0;
 }
 
 /* Homepage Left Panel Image */
@@ -62,8 +64,8 @@ p {
 }
 
 .image-crop {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     /* position: relative; */
     overflow: hidden;
     border-radius: 50%;
@@ -121,12 +123,14 @@ p {
 .slide-right {
     margin-left: 240px;
     width: calc(100% - 240px);
+    display: block;
 }
 
 .sign-up {
     margin: auto;
     padding: 0 60px;
     width: 450px;
+    box-sizing: content-box;
 }
 
 .title {
@@ -145,6 +149,7 @@ p {
 /* Use inline-block to change font stylings */
 .sign-up label {
     margin-top: 30px;
+    margin-bottom: 0px;
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
@@ -219,12 +224,12 @@ input:focus {
     top: 0;
     left: 0;
     margin-top: 2px;
-    border: 1px solid #959595;
+    border: 1px solid #dfdfdf;
     border-radius: 2px;
     width: 13px;
     height: 13px;
     color: white;
-    background-color: #fbfbfd;
+    background-color: #dfdfdf;
 }
 
 /*
@@ -274,6 +279,7 @@ input:focus {
 	padding: 15px 15px;
     background-color: #79adb1;
     font-family: inherit;
+    font-size: 13px;
     font-weight: inherit;
     text-transform: uppercase;
 	letter-spacing: 0.5px;
@@ -336,104 +342,17 @@ input:focus {
 }
 
 .question {
-    padding: 60px 0px;
+    padding: 50px 20px;
 }
 
-@media screen and (max-height: 569px) {
-    .container {
-        height: auto;
-    }
-    .sign-up {
-        padding: 80px 60px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .title {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 896px) {
-    .title {
-        font-size: 28px;
-        margin-bottom: 6px;
-    }
-    label {
-        margin-top: 25px;
-    }
-    #submit {
-        margin-top: 35px;
-    }
-}
-
-@media screen and (max-width: 853px) {
-    .image-panel {
-        display: none;
-    }
-    .right-panel {
-        width: 100%;
-    }
-    .title {
-        font-size: 35px;
-        margin-bottom: 15px;
-    }
-    .links {
-        width: 100%;
-        bottom: 20px;
-        left: 0;
-        text-align: center;
-    }
-    .links a {
-        color: #5a5a5a;
-    }
-}
-
-@media screen and (max-width: 710px) {
-    /*need to moved this to the top*/
-    .fixed-panel {
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-    .slide-right {
-        margin: auto;
-    }
-}
-
-@media screen and (max-width: 566px) {
-    .sign-up {
-        padding-right: 10%;
-        padding-left: 10%;
-    }
-}
-
-@media screen and (max-width: 544px) {
-    .container {
-        height: auto;
-    }
-    .sign-up {
-        padding: 80px 5%;
-    }
-    #submit {
-        margin-top: 25px;
-    }
-}
-
-@media screen and (max-width: 369px) {
-    #name, #photo, #email {
-        width: 80%;
-    }
-}
 
 .question {
-    border-top: 1px solid #e4e4e4;
-}
-
-.question:first-child {
-    border: 0px;
-    padding-top: 0px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #f3f3f3;
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.02);
 }
 
 /* .question h4 {
@@ -462,22 +381,22 @@ input:focus {
 }
 
 
-.survey-container label {
+/* .survey-container label {
     display: inline-block;
     font-size: 17px;
     border-radius: 30px;    
     margin-top: 10px;
     padding-left: 40px;
-}
+} */
 
-/* New Checkmark Box */
-.radio {
+/* New Radio Button */
+/* .radio {
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: -1px;
+    margin-top: -1px; */
     /* border: 1px solid #dfdfdf; */
-    border-radius: 50%;
+    /* border-radius: 50%;
     width: 20px;
     height: 20px;
     color: white;
@@ -496,29 +415,29 @@ input:focus {
 
 .answers input {
     display: none; 
-}
+} */
 
 /*
 * Tilde indicates siblings of a parent element
 * So if the parent is checked, the sibling's CSS is altered
 */
-.answers input:checked ~ .radio {
+/* .answers input:checked ~ .radio {
     border-color: #79adb1;
     background-color: #79adb1;
-}
+} */
 
 /*
 * Create section for checkmark
 * Hidden until checked
 */
-.radio:after {
+/* .radio:after {
     content: "";
     position: absolute;
     display: none;
-}
+} */
   
 /* Display the checkmark when checked */
-.answers input:checked ~ .radio:after {
+/* .answers input:checked ~ .radio:after {
     display: block;
 }
 
@@ -529,4 +448,139 @@ input:focus {
     background-color: white;
     width: 8px;
     height: 8px;
+}
+*/
+
+.answers {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.survey-container input[type="radio"] {
+    display: none; 
+}
+
+.survey-container label {
+    display:inline-block;
+    padding: 10px 16px;
+    font-size: 17px;
+    border: 2px solid #79adb1;
+    border-radius: 30px;    
+    color: #79adb1;
+    margin-top: 5px;
+    margin-right: 10px;
+    /* margin-bottom: 10px; */
+}
+
+.survey-container input[type="radio"]:checked + label { 
+    background-color: #79adb1;
+    border-color: #79adb1;
+    color: white;
+}
+
+.survey-container label:hover {
+    cursor: pointer;
+}
+
+.result-section {
+    display: none;
+} 
+
+@media screen and (max-height: 569px) {
+    .container {
+        height: auto;
+    }
+    .sign-up {
+        padding: 80px 60px;
+    }
+}
+
+@media screen and (max-width: 1144px) {
+    .survey-container label {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 896px) {
+    .title {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+    label {
+        margin-top: 25px;
+    }
+    #submit {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 853px) {
+    .image-panel {
+        display: none;
+    }
+    .fixed-panel {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    .right-panel {
+        width: 100%;
+    }
+    .slide-right {
+        margin: auto;
+    }
+    .title {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    .links {
+        width: 100%;
+        bottom: 20px;
+        left: 0;
+        text-align: center;
+    }
+    .links a {
+        color: #5a5a5a;
+    }
+    .survey-container {
+        padding: 40px 8% 0px;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    .sign-up {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width: 544px) {
+    .container {
+        height: auto;
+    }
+    .sign-up {
+        padding: 80px 5%;
+    }
+    #submit {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 491px) {
+
+}
+
+@media screen and (max-width: 369px) {
+    #name, #photo, #location {
+        width: 80%;
+    }
 }

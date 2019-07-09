@@ -8,11 +8,8 @@ module.exports = function(app) {
 
     //survey page with information from form
     app.get("/survey", function(req, res) {
-        //use object keys to convert to array and get length of object
-        queryLength = Object.keys(req.query).length;
-        //allow users to access page only if they enter form info
-        //need to change to allow access only if name, photo, and location parameters are passed
-        if (queryLength !== 0) {
+        //if query includes name, photo, and location, allow access to survey page
+        if (req.query.name && req.query.photo && req.query.location) {
             res.sendFile(path.join(__dirname, "../public/survey.html"));
         //redirect back to root until user completes form
         } else {

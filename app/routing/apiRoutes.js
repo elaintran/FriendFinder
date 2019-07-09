@@ -45,6 +45,4 @@ function scoreResults(res) {
 //make survey page mobile responsive; maybe change layout again
 //display modal on page
 //maybe redo radio buttons
-//check if user image url is valid or invalid
-//find a placeholder image for survey
 //make survey input required
