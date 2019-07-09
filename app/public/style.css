@@ -465,7 +465,7 @@ input:focus {
 }
 
 .survey-container input[type="radio"] {
-    display: none; 
+    visibility: hidden; 
 }
 
 .survey-container label {
@@ -476,7 +476,6 @@ input:focus {
     border-radius: 30px;    
     color: #79adb1;
     margin-top: 5px;
-    margin-right: 10px;
     /* margin-bottom: 10px; */
 }
 

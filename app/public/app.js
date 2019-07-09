@@ -13,11 +13,11 @@ function insertQuestions() {
 	for(var i = 0; i < questions.length; i++) {
 		//need different id and label names so that the label can match the
 		//corresponding id
-		var stronglyDisagree = answer(i, 1, "strongly-disagree", "Strongly Disagree");
-		var disagree = answer(i, 2, "disagree", "Disagree");
-		var neutral = answer(i, 3, "neutral", "Neutral");
-		var agree = answer(i, 4, "agree", "Agree");
-		var stronglyAgree = answer(i, 5, "strongly-agree", "Strongly Agree");
+		var stronglyDisagree = answer(i, 1, "strongly-disagree", "Strongly Disagree", "required");
+		var disagree = answer(i, 2, "disagree", "Disagree", "");
+		var neutral = answer(i, 3, "neutral", "Neutral", "");
+		var agree = answer(i, 4, "agree", "Agree", "");
+		var stronglyAgree = answer(i, 5, "strongly-agree", "Strongly Agree", "");
 		var questionContainer = $("<div>").addClass("question");
 		var surveyQuestion = $("<h4>").text(questions[i]);
 		var surveyAnswer = $("<div>").addClass("answers");
@@ -29,16 +29,14 @@ function insertQuestions() {
 		"type": "submit",
 		"id": "submit",
 		"class": "results",
-		"value": "See Results",
-		"data-toggle": "modal",
-		"data-target": "#result-modal"
+		"value": "See Results"
 	})
 	$(".survey").append(submit);
 }
 insertQuestions();
 
-function answer(i, value, id, answer) {
-	var answerButton = '<input type="radio" id="' + id + "-" + i + '" name="q' + (i + 1) + '" value="' + value + '">' + 
+function answer(i, value, id, answer, required) {
+	var answerButton = '<input type="radio" id="' + id + "-" + i + '" name="q' + (i + 1) + '" value="' + value + '"' + required + '>' + 
 	'<label for="' + id + "-" + i +'">' + answer + '</label><br>';
 	// var answerButton = '<label class="radio-container"><input type="radio" id="' + id + "-" + i + ' radio-button" name="q' + (i + 1) + '" value="' + value + '"><span class="radio"></span>' + 
 	// '<h5>' + answer + '</h5></label><br>';
